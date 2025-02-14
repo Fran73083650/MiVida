@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Mi Amor ❤️</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Botón inicial -->
+    <div id="initialButton" class="initial-button-container">
+        <button class="big-button">
+            <span class="heart-icon">❤️</span>
+            <span class="button-text">Toca aquí<br>mi amor</span>
+        </button>
+    </div>
+
+    <!-- Contenido principal (inicialmente oculto) -->
+    <div id="mainContent" style="display: none;">
+        <!-- Audio (oculto, reproducción automática) -->
+        <audio id="bgMusic" loop>
+            <source src="AmorCancion.mp3" type="audio/mpeg">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+        
+        <!-- Botón de control de música (inicialmente oculto) -->
+        <button id="musicToggle" class="music-button" style="display: none;">
+            <span class="music-icon">🎵</span>
+        </button>
+
+        <!-- Mensaje especial con efecto de máquina de escribir -->
+        <h1 id="typingText"></h1>
+
+        <!-- Contenedor del carrusel con textos románticos -->
+        <div class="carousel-container">
+            <div class="romantic-text left-text">💗 Eres mi felicidad 💗</div>
+            
+            <div class="carousel">
+                <div class="slides">
+                    <img src="foto1.jpeg" alt="Foto 1">
+                    <img src="foto2.jpeg" alt="Foto 2">
+                    <img src="foto3.jpeg" alt="Foto 3">
+                </div>
+            </div>
+
+            <div class="romantic-text right-text">✨ Te amo cada día más ✨</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,276 @@
+body {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    background: #ffe6ee;
+    color: #333;
+    padding: 20px 10px;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Estilos para el botón inicial */
+.initial-button-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffe6ee;
+    z-index: 1000;
+}
+
+.big-button {
+    padding: 30px;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(145deg, #ff99cc, #ff66b3);
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 30px rgba(255, 153, 204, 0.8);
+    transition: all 0.3s ease;
+}
+
+.big-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 40px rgba(255, 153, 204, 0.9);
+}
+
+.heart-icon {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.button-text {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+/* Efecto de máquina de escribir */
+h1 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ff6699;
+    margin: 20px auto;
+    white-space: pre-wrap;
+    max-width: 280px;
+    text-shadow: 0 0 10px rgba(255, 102, 153, 0.3);
+}
+
+/* Contenedor del carrusel con los textos */
+.carousel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px auto;
+    max-width: 300px;
+}
+
+/* Texto romántico */
+.romantic-text {
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    color: #66ccff;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    margin: 10px 0;
+    text-shadow: 0 0 8px rgba(102, 204, 255, 0.4);
+}
+
+.left-text, .right-text {
+    text-align: center;
+}
+
+/* Carrusel */
+.carousel {
+    position: relative;
+    width: 300px;  /* Aumentamos ligeramente el ancho */
+    height: 400px; /* Establecemos una altura fija */
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 153, 204, 0.6);
+    margin: 15px auto;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%; /* Aseguramos que los slides ocupen toda la altura */
+}
+
+.slides img {
+    min-width: 300px; /* Ancho mínimo igual al del contenedor */
+    width: 300px;    /* Ancho fijo igual al del contenedor */
+    height: 400px;   /* Altura fija igual al del contenedor */
+    object-fit: cover; /* Asegura que la imagen cubra todo el espacio */
+    flex-shrink: 0;  /* Evita que las imágenes se compriman */
+    border-radius: 15px;
+}
+
+/* Mejoras para móviles */
+@media (max-width: 400px) {
+    .carousel {
+        width: 280px;  /* Reducimos para pantallas más pequeñas */
+        height: 380px; /* Mantenemos la proporción */
+    }
+    
+    .slides img {
+        min-width: 280px;
+        width: 280px;
+        height: 380px;
+    }
+    
+    .romantic-text {
+        font-size: 16px;
+        width: 280px; /* Aseguramos que el texto tenga el mismo ancho */
+        margin: 10px auto;
+    }
+}
+
+/* Estilos para los corazones flotantes */
+.floating-heart {
+    position: fixed;
+    z-index: 10;
+    pointer-events: none;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes floatHeartUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-150px) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+@keyframes floatHeartRight {
+    0% {
+        transform: translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateX(150px) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+@keyframes floatHeartDown {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(150px) rotate(-45deg);
+        opacity: 0;
+    }
+}
+
+@keyframes floatHeartLeft {
+    0% {
+        transform: translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateX(-150px) rotate(-45deg);
+        opacity: 0;
+    }
+}
+
+/* Botón de control de música */
+.music-button {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ff99cc;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(255, 153, 204, 0.6);
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+.music-button:hover {
+    background: #ff66b3;
+    transform: scale(1.1);
+}
+
+.music-button.muted .music-icon {
+    opacity: 0.5;
+}
+
+/* Asegurarse de que el contenido principal no se vea afectado */
+.carousel-container {
+    position: relative;
+    z-index: 20;
+}
+
+#typingText {
+    position: relative;
+    z-index: 20;
+}
+
+/* Mejoras para móviles */
+@media (max-width: 400px) {
+    h1 {
+        font-size: 18px;
+        max-width: 250px;
+    }
+    
+    .carousel, .slides img {
+        width: 250px;
+    }
+    
+    .romantic-text {
+        font-size: 16px;
+    }
+}
